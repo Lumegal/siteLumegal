@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- <script>
+        if (window.location.protocol === "http:") {
+            window.location.href = "https://" + window.location.host + window.location.pathname + window.location.hash;
+        }
+    </script> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumegal Indústria</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/img/Favicon/lumega.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<style>
+    /* Fundo escuro transparente cobrindo a tela toda */
+    .modal-overlay {
+        display: none;
+        /* Escondido por padrão */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Exibe o modal quando a classe 'active' for adicionada */
+    .modal-overlay.active {
+        display: flex;
+    }
+
+    /* Container do PDF dentro do modal */
+    .modal-content {
+        position: relative;
+        background-color: #fff;
+        width: 100%;
+        max-width: 1350px;
+        height: 90vh;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Botão de Fechar (X) */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 28px;
+        font-weight: bold;
+        background: none;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+        z-index: 10;
+        line-height: 1;
+    }
+
+    /* Visualizador do PDF em tela cheia no container */
+    #pdf-iframe {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-wrapper">
+                <a href="#hero">
+                    <img src="../assets/img/Background/Logo-Lumegal-Site.jpg" alt="Logo Lumegal" class="logo" />
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+            <nav class="nav">
+                <a href="#hero">Início</a>
+                <a href="#about">Sobre</a>
+                <a href="#services">Serviços</a>
+                <a href="#details">Detalhamento técnico</a>
+                <a href="./">Galvanização</a>
+                <a href="#contact">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero hero-defensa">
+        <div class="hero-content">
+            <h1>CONHEÇA A LINHA DE DEFENSAS METÁLICAS DA LUMEGAL</h1>
+            <p>Excelência em galvanização e soluções metálicas.*</p>
+        </div>
+    </section>
+
+    <!-- Sobre a Empresa -->
+    <section id="about" class="about">
+        <div class="section-content">
+            <h2>Sobre a Lumegal Defensas Metálicas</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Entre todas as vantagens que podemos oferecer, a mais valiosa é a
+                        confiança. A confiança nasce do compromisso em entregar sempre o
+                        melhor, garantindo a você qualidade e excelência em cada detalhe.
+                        Quanto mais você conhecer a Lumegal, mais perceberá o cuidado e a
+                        dedicação presentes em nossos serviços e em cada membro da nossa
+                        equipe. Esse é o reflexo da nossa total dedicação ao serviço de
+                        <strong>Galvanização a Fogo</strong>.
+                    </p>
+                    <p>
+                        Todos os dias, dedicamos 100% dos nossos esforços e recursos para
+                        atender às suas necessidades, pois acreditamos que, antes de
+                        conquistar o seu negócio, precisamos conquistar a sua confiança.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="../assets/img/About/sobre-lumegal.jpg" alt="Foto equipe Lumegal Diadema"
+                        class="photo-1" />
+                    <img src="../assets/img/About/sobre-lumegal-2.jpg" alt="Foto equipe Lumegal Indaiatuba"
+                        class="photo-2" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalhamento Técnico -->
+    <section id="details" class="details">
+        <div class="section-content">
+            <h2>Detalhamento técnico das peças das Defensas Metálicas Semi-maleável (Guard Rail)</h2>
+            <div class="details-content">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a href="../assets/docs/Defensa/Detalhamento.pdf"
+                        style="display: flex; flex-direction: column; align-items: center;">
+                        <img src="../assets/img/Defensa/Img Detalhamento.png" alt="Detalhamento Técnico" />
+                    </a>
+                    <a href="../assets/docs/Defensa/Detalhamento.pdf" download
+                        style="color: #0066cc; text-decoration: underline; cursor: pointer;">
+                        Baixe aqui
+                    </a>
+                </div>
+                <div class="details-content-text-container">
+                    <h2>Referências normativas</h2>
+                    <info>
+                        <p><strong>ABNT NBR 6970</strong><br />
+                            <infoText>Defensas Metálicas de perfil zincado por imersão à quente</infoText>
+                        </p>
+                        <p><strong>ABNT NBR 6971</strong><br />
+                            <infoText>Defensas Metálicas de perfil zincado por imersão à quente</infoText>
+                        </p>
+                        <p><strong>ABNT NBR 15486</strong><br />
+                            <infoText>Defensas Metálicas de perfil zincado por imersão à quente</infoText>
+                        </p>
+                    </info>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <!-- <section id="services" class="services">
+        <div class="section-content">
+            <h2>Nossos Serviços</h2>
+            <div class="service-content">
+                <div class="service-item">
+                    <img src="../assets/img/Services/galvanizacao.jpg" alt="Galvanização a Fogo" class="modal-image" />
+                    <p>
+                        Oferecemos serviços de <strong>galvanização a fogo</strong>, um
+                        processo altamante eficiente que protege peças metálicas contra a
+                        corrosão, assegurando não apenas a <strong>durabilidade</strong>,
+                        mas também uma <strong>resistência superior</strong> aos mais
+                        diversos agentes externos. Nossa expertise garante qualidade e
+                        confiabilidade, proporcionando soluções robustas e econômicas para
+                        atender às necessidades de nossos clientes.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <p>
+                        A <strong>imersão em zinco fundido</strong> é um processo de
+                        excelência que confere às peças metálicas uma
+                        <strong>resistência mecânica excepcional</strong> e uma
+                        <strong>proteção avançada contra agentes externos</strong>, como
+                        umidade, oxidação e intempéries. Essa técnica assegura maior vida
+                        útil e desempenho superior para os materiais tratados, tornando-se
+                        uma solução indispensável para aplicações que demandam qualidade e
+                        durabilidade.
+                    </p>
+                    <img src="../assets/img/Services/suspensas.JPG" alt="Peças suspensas" class="modal-image" />
+                </div>
+                <div class="service-item">
+                    <img src="../assets/img/Services/pecas_galvanizadas.JPG" alt="Peças Galvanizadas"
+                        class="modal-image" />
+                    <p>
+                        As <strong>peças galvanizadas</strong> destacam-se pela
+                        <strong>baixa necessidade de manutenção</strong>, resultando em uma
+                        <strong>redução significativa de custos</strong> ao longo do tempo.
+                        Além disso, esse processo contribui diretamente para a
+                        <strong>sustentabilidade</strong>, ao aumentar a durabilidade dos
+                        materiais e minimizar a necessidade de substituições, promovendo um
+                        uso mais eficiente dos recursos naturais.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <p>
+                        Nossa <strong>expertise</strong> no processo de galvanização
+                        assegura <strong> qualidade superior</strong> e total
+                        <strong>conformidade</strong> com as necessidades e exigências
+                        específicas de cada cliente, oferecendo soluções personalizadas que
+                        atendem aos mais altos padrões do mercado.
+                    </p>
+                    <img src="../assets/img/Services/acabamento.JPG" alt="Acabamento" class="modal-image" />
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contato -->
+    <section id="contact" class="contact">
+        <div class="section-content">
+            <h2>Entre em Contato</h2>
+            <div class="contact-cards">
+                <!-- Card Diadema -->
+                <a href="https://www.google.com/maps/place/Avenida+Café+Filho,+262,+Casa+Grande,+Diadema,+SP"
+                    target="_blank" rel="noopener noreferrer" class="card-link">
+                    <div class="card">
+                        <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=3pe7LU8CGMQmxVCdC0tNpQ&cb_client=search.gws-prod.gps&w=408&h=240&yaw=29.633936&pitch=0&thumbfov=100"
+                            alt="Localização Diadema" />
+                        <h3>Diadema</h3>
+                        <p>
+                            Avenida Café Filho, 262<br />
+                            Casa Grande, Diadema
+                        </p>
+                        <p>Contato:</p>
+                        <p class="contact-info">
+                            <!-- <i class="fas fa-phone"></i>
+              <i class="fab fa-whatsapp"></i> -->
+                            <strong>(11) 4066-6466</strong>
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Card Indaiatuba -->
+                <a href="http://www.google.com/maps/place/Rua+Hermínio+de+Mello,+1193,+Distrito+Industrial+Domingos+Giomi,+Indaiatuba,+SP"
+                    target="_blank" rel="noopener noreferrer" class="card-link">
+                    <div class="card">
+                        <img src="../assets/img/Contato/indaiatuba.jpg" alt="Localização Indaiatuba" height="150"
+                            width="100%" />
+                        <h3>Indaiatuba</h3>
+                        <p>
+                            Rua Hermínio de Mello, 1193<br />
+                            Distrito Industrial Domingos Giomi, Indaiatuba, SP
+                        </p>
+                        <p>Contato:</p>
+                        <p class="contact-info">
+                            <!-- <i class="fas fa-phone"></i>
+              <i class="fab fa-whatsapp"></i> -->
+                            <strong>(19) 3935-9888</strong>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            &copy; 2026 Lumegal Indústria e Comércio Ltda.<br />
+            Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const pdfModal = document.getElementById("pdf-modal");
+            const pdfEmbed = document.getElementById("pdf-iframe");
+            const closeModal = document.getElementById("close-modal");
+            const pdfPath = "../assets/docs/Defensa/Detalhamento.pdf";
+
+            // Detecta se é celular (por User-Agent ou largura de tela <= 768px)
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
+            // Funções de controle do Modal (Desktop)
+            function abrirModalPDF() {
+                if (pdfEmbed && pdfModal) {
+                    pdfEmbed.src = pdfPath;
+                    pdfModal.classList.add("active");
+                }
+            }
+
+            function fecharModalPDF() {
+                if (pdfEmbed && pdfModal) {
+                    pdfModal.classList.remove("active");
+                    pdfEmbed.src = ""; // Interrompe o carregamento
+                }
+            }
+
+            if (closeModal) {
+                closeModal.addEventListener("click", fecharModalPDF);
+            }
+
+            if (pdfModal) {
+                pdfModal.addEventListener("click", (e) => {
+                    if (e.target === pdfModal) {
+                        fecharModalPDF();
+                    }
+                });
+            }
+
+            // Executa a lógica apenas se a URL contiver #qrcode
+            if (window.location.hash === "#qrcode") {
+                const details = document.getElementById("details");
+
+                if (isMobile) {
+                    // ==========================================
+                    //  FLUXO DISPOSITIVOS MÓVEIS (DIRETO PARA PDF)
+                    // ==========================================
+
+                    // 1. Prepara o histórico para o botão voltar funcionar corretamente no mobile
+                    history.replaceState(null, "", window.location.pathname + "#details");
+                    history.pushState({ pdfOpened: true }, "", window.location.pathname + "#details");
+
+                    // 2. Rola até a seção #details
+                    if (details) {
+                        details.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                    }
+
+                    // 3. Redireciona a tela diretamente para o PDF
+                    setTimeout(() => {
+                        window.location.href = pdfPath;
+                    }, 1000);
+
+                } else {
+                    // ==========================================
+                    //  FLUXO COMPUTADOR / DESKTOP (MODAL)
+                    // ==========================================
+
+                    // 1. Limpa a hash #qrcode mantendo apenas #details no histórico
+                    history.replaceState(null, "", window.location.pathname + "#details");
+
+                    // 2. Rola até a seção #details
+                    if (details) {
+                        details.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                    }
+
+                    // 3. Exibe o PDF em janela flutuante sobre a página
+                    setTimeout(() => {
+                        abrirModalPDF();
+                    }, 1000);
+                }
+            }
+        });
+    </script>
+
+    <!-- Modal de Visualização do PDF (Utilizado no Desktop) -->
+    <div id="pdf-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn" aria-label="Fechar">&times;</button>
+            <embed id="pdf-iframe" src="" type="application/pdf">
+        </div>
+    </div>
+
+    <!-- Modal para exibição de imagens -->
+    <div class="image-modal" id="imageModal">
+        <!-- <button class="close-bnt" id="closeModal">&times;</button> -->
+        <img src="" alt="Imagem ampliada" id="modalImage" />
+    </div>
+</body>
+
+</html>
