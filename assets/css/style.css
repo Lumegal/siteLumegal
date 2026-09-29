@@ -354,7 +354,7 @@ section p {
   display: flex;
   align-items: flex-start; /* Alinha o conteúdo ao topo */
   justify-content: space-between; /* Mantém o texto e a imagem separados */
-  gap: 50px; /* Espaçamento entre o texto e imagem */
+  gap: 160px; /* Espaçamento entre o texto e imagem */
   flex-wrap: wrap; /* Garante que o conteúdo se ajuste em telas menores */
   margin-top: 20px;
 }
@@ -368,16 +368,23 @@ section p {
   line-height: 1.6;
 }
 
+.about-text p {
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
 .about-image {
   position: relative; /* Necessário para sobreposição */
   flex: 1; /* Garante que as imagens ocupem metade do espaço disponível */
-  max-width: 40%;
+  max-width: 50%;
   display: flex; /* Alinha as imagens lado a lado */
   justify-content: flex-start; /* Alinha as imagens à esquerda */
+  margin-right: -80px; /* CHECK-ME */
 }
 
 .about-image img {
-  width: 300px; /* Tamanho fixo para as imagens */
+  width: 400px; /* Tamanho fixo para as imagens */
   border-radius: 8px; /* Bordas arredondadas */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destacar */
   position: absolute; /* Permite posicionar as imagens livremente */
@@ -389,7 +396,6 @@ section p {
 
 /* Efeito de hover */
 .about-image img:hover {
-  transform: scale(1.05); /* Amplia ligeiramente a imagem */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
 }
 
@@ -400,6 +406,10 @@ section p {
   z-index: 1; /* Garante que a foto 1 fique na frente */
 }
 
+.photo-1:hover {
+  transform: scale(1.05); /* Amplia ligeiramente a imagem */
+}
+
 .photo-2 {
   transform: rotate(5deg); /* Inclinação para segunda foto */
   top: 40px; /* Ajusta a posição vertical */
@@ -407,28 +417,37 @@ section p {
   z-index: 1; /* Garante que a foto 2 fique atrás */
 }
 
+.photo-2:hover {
+  transform: scale(1.2); /* Amplia ligeiramente a imagem */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .about-content {
-    flex-direction: column; /* Empilha o texto e a imagem em telas menores */
-    text-align: center; /* Centraliza o conteúdo */
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
   }
 
   .about-text {
-    max-width: 100%; /* Remove a limitação de largura */
-    text-align: center; /* Centraliza o texto */
+    max-width: 100%;
+    text-align: center;
   }
 
   .about-image {
-    max-width: 100%; /* Remove a limitação de largura */
-    justify-content: center; /* Centraliza as imagens */
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
   }
 
   .about-image img {
-    width: 150px; /* Reduz o tamanho das imagens */
-    position: static; /* Desativa o posicionamento absoluto */
-    margin: 10px auto; /* Adiciona espaço entre as imagens */
-    transform: none; /* Remove a inclinação */
+    max-width: 100%;
+    position: static;
+    margin: 10px;
+    transform: none;
   }
 }
 
@@ -482,7 +501,7 @@ section p {
 .service-content {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espaçamento entre os blocos */
+  gap: 80px; /* Espaçamento entre os blocos */
 }
 
 .service-item {
@@ -495,7 +514,7 @@ section p {
 
 .service-item img {
   width: 50%; /* Metade do espaço para a imagem */
-  max-width: 450px;
+  max-width: 550px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -513,20 +532,34 @@ section p {
 
 .service-item p {
   flex: 1;
-  font-size: 1rem;
+  font-size: 1.4rem;
   line-height: 1.6;
   color: #666;
+  padding: 40px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
   .service-item {
-    flex-direction: column; /* Emplilha texto e imagem em telas menores */
+    gap: 0px;
+    flex-direction: column;
   }
 
   .service-item img {
     width: 100%;
+    order: 1;
+  }
+
+  .service-item p {
+    order: 2;
+    padding: 40px 0px;
+  }
+
+  .service-content {
+    gap: 0px;
   }
 }
+
 /* Qualidade */
 .quality {
   padding: 40px;
@@ -534,17 +567,24 @@ section p {
 
 .quality-content {
   display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.quality-certificate {
+  display: flex;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.quality-content img {
+.quality-certificate img {
   width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.quality-content img:hover {
+.quality-certificate img:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   transition:
@@ -552,7 +592,7 @@ section p {
     box-shadow 0.3s ease;
 }
 
-.quality-content p {
+.quality-certificate p {
   flex: 1;
   padding: 40px;
   color: #666;
@@ -560,15 +600,26 @@ section p {
   line-height: 1.6;
 }
 
-.quality-content a {
+.quality-certificate a {
   display: inline-block;
 }
 
-ul {
+.quality-policy-objective {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.quality-policy-objective ul {
   padding-left: 20px;
 }
 
-li {
+.quality-policy-objective p {
+  font-size: 1.2rem;
+}
+
+.quality-policy-objective li {
+  font-size: 1.2rem;
   margin-left: 0;
   padding-left: 5px;
   text-indent: 0;
@@ -578,13 +629,13 @@ li {
 
 /* Responsividade Qualidade */
 @media (max-width: 768px) {
-  .quality-content {
+  .quality-certificate {
     flex-direction: column;
     text-align: center;
   }
 
-  .quality-content img {
-    margin-bottom: 20px;
+  .quality-certificate p {
+    padding: 0px;
   }
 }
 
