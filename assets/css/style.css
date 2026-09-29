@@ -201,6 +201,7 @@ body {
 .hero .btn {
   position: relative;
   z-index: 2; /* Garante que o texto e o botão fiquem acima da sobreposição */
+  text-align: center;
 }
 
 .hero h1 {
@@ -283,6 +284,7 @@ section p {
 .details {
   padding: 40px;
   text-align: center;
+  background-color: #f9f9f9; /* Cor de fundo */
 }
 
 .details-content {
@@ -352,9 +354,9 @@ section p {
 
 .about-content {
   display: flex;
-  align-items: flex-start; /* Alinha o conteúdo ao topo */
+  align-items: center; /* Alinha o conteúdo ao topo */
   justify-content: space-between; /* Mantém o texto e a imagem separados */
-  gap: 160px; /* Espaçamento entre o texto e imagem */
+  gap: 80px; /* Espaçamento entre o texto e imagem */
   flex-wrap: wrap; /* Garante que o conteúdo se ajuste em telas menores */
   margin-top: 20px;
 }
@@ -375,19 +377,19 @@ section p {
 }
 
 .about-image {
-  position: relative; /* Necessário para sobreposição */
-  flex: 1; /* Garante que as imagens ocupem metade do espaço disponível */
+  flex: 1;
   max-width: 50%;
-  display: flex; /* Alinha as imagens lado a lado */
-  justify-content: flex-start; /* Alinha as imagens à esquerda */
-  margin-right: -80px; /* CHECK-ME */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px; /* Ajusta a posição vertical */
 }
 
 .about-image img {
   width: 400px; /* Tamanho fixo para as imagens */
   border-radius: 8px; /* Bordas arredondadas */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destacar */
-  position: absolute; /* Permite posicionar as imagens livremente */
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease; /* Adiciona transição suave */
@@ -401,19 +403,19 @@ section p {
 
 .photo-1 {
   transform: rotate(-5deg); /* Inclinação da primeira foto */
-  top: 20px; /* Ajusta a posição vertical */
+  margin-top: -120px; /* Ajusta a posição vertical */
   left: -100px; /* Alinha a primeira imagem sem sobreposição */
   z-index: 1; /* Garante que a foto 1 fique na frente */
 }
 
 .photo-1:hover {
-  transform: scale(1.05); /* Amplia ligeiramente a imagem */
+  transform: scale(1.2); /* Amplia ligeiramente a imagem */
+  z-index: 2; /* Garante que a foto 1 fique na frente */
 }
 
 .photo-2 {
   transform: rotate(5deg); /* Inclinação para segunda foto */
-  top: 40px; /* Ajusta a posição vertical */
-  left: 200px; /* Define sobreposição leve */
+  margin: -120px; /* Define sobreposição leve */
   z-index: 1; /* Garante que a foto 2 fique atrás */
 }
 
@@ -440,6 +442,7 @@ section p {
     width: 100%;
     justify-content: center;
     align-items: center;
+  margin-top: 0px; /* Ajusta a posição vertical */
     margin-right: 0;
   }
 
@@ -871,4 +874,93 @@ section p {
   border: none;
 
   background: white;
+}
+
+.reasons {
+  padding: 40px;
+  text-align: center;
+}
+
+.reasons-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.reasons-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.reasons-list {
+  display: flex;
+  flex-direction: row;
+  gap: 160px;
+  margin-right: -120px;
+}
+
+.reasons-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.reasons-item h1 {
+  margin: 0;
+  color: #0033a0;
+  font-size: 3rem;
+}
+
+.reasons-item ulText {
+  margin: 0;
+  color: #666;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.reasons-content p {
+  margin: 0;
+  color: #666;
+  font-size: 1.5rem;
+  text-indent: 40px;
+}
+
+@media (max-width: 768px) {
+  .details-content {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .reasons-list {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 15px;
+    margin-right: 0;
+  }
+
+  .reasons-column {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .reasons-item {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .reasons-item h1 {
+    font-size: 2.5rem;
+  }
+
+  .reasons-item ulText {
+    font-size: 1.6rem;
+  }
+
+  .reasons-content p {
+    font-size: 1.2rem;
+  }
 }
