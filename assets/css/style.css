@@ -283,6 +283,7 @@ section p {
 .details {
   padding: 40px;
   text-align: center;
+  background-color: #f9f9f9; /* Cor de fundo */
 }
 
 .details-content {
@@ -871,4 +872,92 @@ section p {
   border: none;
 
   background: white;
+}
+
+.reasons {
+  padding: 40px;
+  text-align: center;
+}
+
+.reasons-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.reasons-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.reasons-list {
+  display: flex;
+  flex-direction: row;
+  gap: 160px;
+  margin-right: -120px;
+}
+
+.reasons-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.reasons-item h1 {
+  margin: 0;
+  color: #0033a0;
+  font-size: 3rem;
+}
+
+.reasons-item ulText {
+  margin: 0;
+  color: #666;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.reasons-content p {
+  margin: 0;
+  color: #666;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .details-content {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .reasons-list {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 15px;
+    margin-right: 0;
+  }
+
+  .reasons-column {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .reasons-item {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .reasons-item h1 {
+    font-size: 2.5rem;
+  }
+
+  .reasons-item ulText {
+    font-size: 1.6rem;
+  }
+
+  .reasons-content p {
+    font-size: 1.2rem;
+  }
 }
